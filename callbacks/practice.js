@@ -118,6 +118,16 @@ contains(names, 'Colt', function(result){
 
 //Not sure if I am overcomplicating this, please let me know in feedback if I am
 // or if there is a simpler way to achieve this!!!
+// --Notes--
+// Ben explained how this all can be done with an existing method for arrays
+// const noDups = array.filter((element, index, arr) => arr.indexOf(element) === index)
+// => arrow notation for anonymous function indexOf
+// same as 
+//    const noDups = array.filter(function(element, index, arr){
+//      return arr.indexOf(element) === index
+//    })
+//----------
+
 function uniq(arr, cb)
 {
   let comparisonVar //variable used for storing the value we are comparing with

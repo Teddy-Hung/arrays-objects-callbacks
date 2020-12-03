@@ -51,15 +51,8 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//for loop ver
-// function looper(arr){
-//   for(let i=0;i<arr.length;i++){
-//     alert(arr[i])
-//   }
-//   return
-// }
 
-//while loop just for fun
+//while loop version just for fun. for loop version below
 function looper(arr){
   let i=arr.length;
   let z=0;
@@ -69,6 +62,14 @@ function looper(arr){
     i--;
   }
 }
+
+//for loop version
+// function looper(arr){
+//   for(let i=0;i<arr.length;i++){
+//     alert(arr[i])
+//   }
+//   return
+// }
 
 
 ////////// PROBLEM 4 //////////
@@ -133,7 +134,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
-
+function divider(arr){
+  let evenArr = []
+  let oddArr = []
+  let returnedArr =[]
+  for(let i = 0; i < arr.length;i++){
+    if(arr[i] % 2 === 0){
+      evenArr.push(arr[i])
+    }else{
+      oddArr.push(arr[i])
+    }
+  }
+  returnedArr.push(evenArr)
+  returnedArr.push(oddArr)
+  return returnedArr
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -155,6 +170,15 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+function finder(arr){
+  let randomNumber = getRandomArbitrary()
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] === randomNumber){
+      return true
+    }
+  }
+  return false
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -183,7 +207,33 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(groceryList, item){
+  if(groceryList && item){
+    for(let i=0; i<groceryList.length; i++){
+      if(groceryList[i] === item){
+        groceryList.splice(i,1)
+      }
+    }
+  }else{
+    groceryList = []
+  }
+  return groceryList
+}
 
+function addItem(groceryList, item){
+  if(groceryList && item){
+    //added for loop to account for duplicates, if duplicate item found, won't add.
+    for(let i=0; i<groceryList.length; i++){
+      if(groceryList[i] === item){
+        return groceryList
+      }
+    }
+    groceryList.push(item)
+  }else{
+    groceryList = []
+  }
+  return groceryList
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -193,7 +243,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  let arr = []
+  for(let i=1; i<=215; i++){
+    arr.push(i)
+  }
+  return arr
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -209,7 +265,20 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(nums){
+  let arr = nums.slice()
+  let tempNum;
+  for(let i=0; i<arr.length; i++){
+    if(typeof arr[i] === 'number'){
+      arr[i] += 10
+    }else if(typeof arr[i] === 'string'){
+      //Can also use arr[i] = +arr[i] + 10 to parse the string
+      tempNum = parseInt(arr[i], 10) + 10
+      arr[i] = tempNum
+    }
+  }
+  return arr
+}
 
 
 ////////// PROBLEM 11 //////////
