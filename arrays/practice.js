@@ -303,8 +303,15 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(array1, array2){
+  return array1.length > array2.length ? array1 : array2
+}
 
-
+//Extra work for fun. Accounting for different sized arrays for
+// the continuation problem
+function shorter(array1, array2){
+  return array1.length > array2.length ? array1 : array2
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -315,7 +322,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(array1, array2){
+  let longerArr = longer(array1,array2).slice
+  let matchingArr = []
 
+  for(let i = 0; i<longerAr.length; i++){
+
+  }
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -356,8 +370,14 @@ var colt = {
 */
 
 //Code Here
+function addEmployee(employees, employee){
+  employees.push(employees)
+}
 
-
+addEmployee(devMountainEmployees,joe)
+addEmployee(devMountainEmployees,cahlan)
+addEmployee(devMountainEmployees,ryan)
+addEmployee(devMountainEmployees,colt)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
